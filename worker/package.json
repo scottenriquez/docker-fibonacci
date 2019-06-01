@@ -1,0 +1,25 @@
+{
+  "name": "docker-fibonacci-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottenriquez/docker-fibonacci.git"
+  },
+  "author": "Scottie Enriquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scottenriquez/docker-fibonacci/issues"
+  },
+  "homepage": "https://github.com/scottenriquez/docker-fibonacci#readme",
+  "dependencies": {
+    "nodemon": "^1.19.1",
+    "redis": "^2.8.0"
+  }
+}

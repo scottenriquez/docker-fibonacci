@@ -42,6 +42,10 @@ typings/
 # Optional npm cache directory
 .npm
 
+# WebStorm
+.idea/
+
+
 # Optional eslint cache
 .eslintcache
 
