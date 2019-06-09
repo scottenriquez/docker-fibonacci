@@ -37,7 +37,7 @@ class Fibonacci extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<label>Enter index</label>
 					<input
-						value={this.state}
+						value={this.state.index}
 						onChange={event => this.setState({index: event.target.value})}
 					/>
 					<button>Submit</button>
@@ -62,9 +62,10 @@ class Fibonacci extends Component {
 		const entries = [];
 		for(let key in this.state.values) {
 			// @ts-ignore
+			let calculatedValue: string = this.state.values[key];
 			entries.push(
 				<div key={key}>
-					For index {key}, {this.state.values[key]} was calculated
+					For index {key}, {calculatedValue} was calculated
 				</div>
 			)
 		}

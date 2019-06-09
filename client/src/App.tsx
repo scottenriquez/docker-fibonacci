@@ -10,10 +10,13 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Link to="/">Home</Link><Link to="/otherPage">Other Page</Link>
         <div>
-			<Route exact path="/" component={Fibonacci}/>
-			<Route path="/otherPage" component={OtherPage} />
+			<Router>
+				<Link to="/">Home</Link>
+				<Link to="/otherPage">Other Page</Link>
+				<Route exact path="/" component={Fibonacci}/>
+				<Route path="/otherPage" component={OtherPage} />
+			</Router>
 		</div>
         <a
           className="App-link"
