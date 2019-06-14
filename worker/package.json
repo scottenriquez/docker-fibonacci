@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/scottenriquez/docker-fibonacci#readme",
   "dependencies": {
-    "nodemon": "^1.19.1",
     "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
