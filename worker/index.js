@@ -19,3 +19,4 @@ const fibonacci = (index) => {
 sub.on('message', (channel, message) => {
   redisClient.hset('values', message, fibonacci(parseInt(message)));
 });
+sub.subscribe('insert');
