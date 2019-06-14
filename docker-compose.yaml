@@ -7,10 +7,10 @@ services:
   api:
     build:
       dockerfile: Dockerfile.dev
-      context: ./server
+      context: api
     volumes:
       - /app/app_modules
-      - ./server:/app
+      - ./api:/app
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -20,12 +20,13 @@ services:
       - PGPASSWORD=postgres_password
       - PGPORT=5432
   client:
+    restart: always
     build:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
       - /app/app_modules
-      - ./worker:/app
+      - ./client:/app
   worker:
     build:
       dockerfile: Dockerfile.dev
