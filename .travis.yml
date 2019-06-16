@@ -1,20 +1,20 @@
 sudo: required
 services:
-	- docker
+- docker
 
 before_install:
-	- docker build -t scottenriquez/fibonacci-client-test -f ./client/Dockerfile.dev ./client
+  - docker build -t scottenriquez/fibonacci-client-test -f ./client/Dockerfile.dev ./client
 
 scripts:
-	- docker run scottenriquez/fibonacci-client-test npm test -- --coverage
+  - docker run scottenriquez/fibonacci-client-test npm test -- --coverage
 
 after_success:
-	- docker build -t scottenriquez/fibonacci-client ./client
-	- docker build -t scottenriquez/fibonacci-api ./api
-	- docker build -t scottenriquez/fibonacci-worker ./worker
-	- docker build -t scottenriquez/fibonacci-nginx ./nginx
-	- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-	- docker push scottenriquez/fibonacci-client
-	- docker push scottenriquez/fibonacci-api
-	- docker push scottenriquez/fibonacci-worker
-	- docker push scottenriquez/fibonacci-nginx
+  - docker build -t scottenriquez/fibonacci-client ./client
+  - docker build -t scottenriquez/fibonacci-api ./api
+  - docker build -t scottenriquez/fibonacci-worker ./worker
+  - docker build -t scottenriquez/fibonacci-nginx ./nginx
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push scottenriquez/fibonacci-client
+  - docker push scottenriquez/fibonacci-api
+  - docker push scottenriquez/fibonacci-worker
+  - docker push scottenriquez/fibonacci-nginx
