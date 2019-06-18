@@ -5,19 +5,22 @@
 			"name": "client",
 			"image": "scottenriquez/fibonacci-client",
 			"hostname": "client",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name": "api",
 			"image": "scottenriquez/fibonacci-api",
 			"hostname": "api",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name": "worker",
 			"image": "scottenriquez/fibonacci-worker",
 			"hostname": "worker",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name": "nginx",
